@@ -4,3 +4,5 @@ source 'https://rubygems.org'
 gemspec
 
 gem 'rspec'
+gem 'rb-fsevent', '~> 0.9.1'
+gem 'guard-rspec'
