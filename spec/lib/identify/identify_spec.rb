@@ -1,6 +1,14 @@
 require 'identify'
 
 describe Identify do
+  it "acts as a constructor" do
+    TestIdentifyInitialize = Class.new do
+      include Identify
+    end
+
+    TestIdentifyInitialize.identify(:test).should be_a TestIdentifyInitialize
+  end
+
   it "registers the identifiable" do
     TestIdentifyRegister = Class.new do
       include Identify
