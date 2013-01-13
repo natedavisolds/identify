@@ -5,11 +5,6 @@ module Identify
     let(:instance) { stub }
     let(:identifiables) { Identifiables.new }
 
-    it "registers an instance" do
-      identifiables.register :test_id, instance
-      identifiables.should include instance
-    end
-
     context "when found by key" do
       it "returns the instance" do
         identifiables.register :foo, stub

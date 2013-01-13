@@ -22,10 +22,6 @@ module Identify
       end
     end
 
-    def include? candidate
-      instances.values.include? candidate
-    end
-
     private 
 
     attr_reader :instances
