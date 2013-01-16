@@ -16,11 +16,11 @@ module Identify
 
     context "when not found by key" do
       it "returns value returned by a given block" do
-        identifiable = identifiables.find(:foo) do
-          "Not found"
+        identifiable = identifiables.find(:foo) do |id|
+          "#{id} not found"
         end
 
-        identifiable.should == "Not found"
+        identifiable.should == "foo not found"
       end
 
       it "returns the second value if no block given" do

@@ -13,7 +13,7 @@ module Identify
     def find key, *default_values, &block
       instances.fetch key.to_s do 
         if block
-          block.call
+          block.call key
         elsif default_values.length > 0
           default_values.first
         else
