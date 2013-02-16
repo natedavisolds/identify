@@ -51,4 +51,29 @@ describe Identify do
 
     instance.attrib.should == "It ran the block!"
   end
+
+  it "symplifies find_identifiable to find" do
+    TestAddingFind = Class.new
+
+    TestAddingFind.should_not respond_to :find
+
+    TestAddingFind.send(:include, Identify)
+
+    TestAddingFind.should respond_to :find
+  end
+
+  it "doesn't symplifies find_identifiable when find exists" do
+    TestNotReplacingFind = Class.new do
+      def self.find key
+        key
+      end
+    end
+
+    TestNotReplacingFind.find("something").should == "something"
+
+    TestNotReplacingFind.send(:include, Identify)
+
+    TestNotReplacingFind.find("something").should == "something"
+    TestNotReplacingFind.find_identifiable("something").should == "Unknown"
+  end
 end

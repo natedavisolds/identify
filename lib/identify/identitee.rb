@@ -29,5 +29,11 @@ module Identify
     def identifiables
       @identifiables ||= Identifiables.new
     end
+
+    module FindAlias
+      def find candidate_id
+        find_identifiable candidate_id
+      end
+    end
   end
 end
