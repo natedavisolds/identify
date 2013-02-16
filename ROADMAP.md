@@ -1,4 +1,3 @@
 ## ROADMAP
 
-* Flush out usage on README
-* simplify class method names if names are available
+- Flush out usage on README
