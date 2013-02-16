@@ -1,4 +1,5 @@
-require 'identify/identifiables'
+require "identify/identifiables"
+require "identify/loader"
 
 module Identify
   module Identitee
@@ -11,9 +12,18 @@ module Identify
     end
 
     def find_identifiable candidate_id
-      identifiables.find candidate_id do
-        Identify::Loader.new(path).load(candidate_id)
+      identifiables.find candidate_id.to_s do
+        Identify::Loader.new(identify_root_directory: identify_root_directory).lazy_load(candidate_id.to_s)
+        identifiables.find candidate_id, "Unknown"
       end
+    end
+
+    def set_identify_root path_to_template_root
+      @identify_root_directory = path_to_template_root
+    end
+
+    def identify_root_directory
+      @identify_root_directory
     end
 
     def identifiables

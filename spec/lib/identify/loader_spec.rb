@@ -16,9 +16,9 @@ module Identify
       it "loads the file" do
         loader = Loader.new
 
-        File.stub!(:exists?).with('known').and_return(true)
+        File.stub!(:exists?).with('known.rb').and_return(true)
 
-        loader.should_receive(:force_load).with('known').once
+        loader.should_receive(:force_load).with('known.rb').once
 
         identity = loader.lazy_load('known') do
           "Failing"

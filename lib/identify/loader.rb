@@ -5,7 +5,7 @@ module Identify
     end
 
     def lazy_load filename
-      full_path = [identify_root_directory, filename].compact.join('/')
+      full_path = [identify_root_directory, "#{filename}.rb"].compact.join('/')
 
       if File.exists? full_path
         force_load full_path
