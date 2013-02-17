@@ -1,6 +1,8 @@
 # Identify
 
-Identify helps build complex classes  
+Identify is a helper for composing classes.  It provides a simple interface to define an instance's behavior and associate it with a key.  Later, this instance can be found by referencing its key.
+
+Identify is an alternative to constructing through subclassing and then finding.   
 
 ## Installation
 
