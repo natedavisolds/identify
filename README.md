@@ -1,30 +1,12 @@
 # Identify
 
-Identify is the inventory list for factory pattern. It makes it easy to construct and then retrieve instances of a class.
-
-## Installation
-
-Add this line to your application's Gemfile:
-
-    gem 'identify'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install identify
-
-## Usage
-
 Provides methods for constructing and retrieving a domain object. Identify is indended to replace persisting data that is tightly couple to domain logic.
 
 Many times you might see a database structure that will always remain static until the codebase changes.  This is a headache to seed the proper data for the objects to work.  Instead use identify to write these classes in code.
 
 Likewise, many classes may be constructed that do the same thing... just a little bit differently. Like a use case.  Identify allows easy retreival of data.
 
-## Finding
+### Finding
 
 Find an identifiable through the `find_identifiable` class method. (See the Basic Example)
 
@@ -44,7 +26,7 @@ Find an identifiable through the `find_identifiable` class method. (See the Basi
 
     Activity.find_identifiable(:new_activity).title # => "Created something new"
 
-## Loading identifiables
+### Loading identifiables
 
 Identify will try to autoload the identifiables if it doesn't already know about them.  By default it will use the pluralize class_name of the identifiable from the folder that the source file is in.  The load path can explicitly be set with the `set_identify_root` method call.
 
@@ -63,6 +45,20 @@ Identify will try to autoload the identifiables if it doesn't already know about
         @successful
       end
     end
+
+## Installation
+
+Add this line to your application's Gemfile:
+
+    gem 'identify'
+
+And then execute:
+
+    $ bundle
+
+Or install it yourself as:
+
+    $ gem install identify
 
 ## Contributing
 
