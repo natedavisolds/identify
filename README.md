@@ -1,8 +1,6 @@
 # Identify
 
-Identify is a helper for composing classes.  It provides a simple interface to define an instance's behavior and associate it with a key.  Later, this instance can be found by referencing its key.
-
-Identify is an alternative to constructing through subclassing and then finding.   
+Identify is the inventory list for factory pattern. It makes it easy to construct and then retrieve instances of a class.
 
 ## Installation
 
@@ -26,9 +24,11 @@ Many times you might see a database structure that will always remain static unt
 
 Likewise, many classes may be constructed that do the same thing... just a little bit differently. Like a use case.  Identify allows easy retreival of data.
 
-### Basic Example
+## Finding
 
-    class Activity 
+Find an identifiable through the `find_identifiable` class method. (See the Basic Example)
+
+    class Activity
       include Identify
 
       attr_reader :title
@@ -43,6 +43,26 @@ Likewise, many classes may be constructed that do the same thing... just a littl
     end
 
     Activity.find_identifiable(:new_activity).title # => "Created something new"
+
+## Loading identifiables
+
+Identify will try to autoload the identifiables if it doesn't already know about them.  By default it will use the pluralize class_name of the identifiable from the folder that the source file is in.  The load path can explicitly be set with the `set_identify_root` method call.
+
+    class LazyLoadingTest
+      include Identify
+
+      attr_accessor :successful
+
+      set_identify_root File.expand_path("../lazy_loading_tests/", __FILE__)
+
+      def initialize
+        @successful = false
+      end
+
+      def successful?
+        @successful
+      end
+    end
 
 ## Contributing
 
