@@ -17,7 +17,7 @@ module Identify
         elsif default_values.length > 0
           default_values.first
         else
-          raise Identify::IdentifiableNotFound
+          raise ::Identify::IdentifiableNotFound
         end
       end
     end

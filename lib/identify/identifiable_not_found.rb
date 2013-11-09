@@ -1,2 +1,4 @@
-class Identify::IdentifiableNotFound < Exception
+module Identify
+  class IdentifiableNotFound < Exception
+  end
 end

@@ -52,7 +52,7 @@ describe Identify do
     instance.attrib.should == "It ran the block!"
   end
 
-  it "symplifies find_identifiable to find" do
+  it "simplifies find_identifiable to find" do
     TestAddingFind = Class.new
 
     TestAddingFind.should_not respond_to :find

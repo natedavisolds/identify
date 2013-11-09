@@ -13,7 +13,7 @@ module Identify
 
     def find_identifiable candidate_id
       identifiables.find candidate_id.to_s do
-        Identify::Loader.new(identify_root_directory: identify_root_directory).lazy_load(candidate_id.to_s)
+        ::Identify::Loader.new(identify_root_directory: identify_root_directory).lazy_load(candidate_id.to_s)
         identifiables.find candidate_id, "Unknown"
       end
     end
@@ -28,12 +28,6 @@ module Identify
 
     def identifiables
       @identifiables ||= Identifiables.new
-    end
-
-    module FindAlias
-      def find candidate_id
-        find_identifiable candidate_id
-      end
     end
   end
 end
