@@ -40,5 +40,12 @@ module Identify
           .to raise_error Identify::IdentifiableNotFound
       end
     end
+
+    context "when requesting all the identifiables" do
+      it "gives an array of all the known instances" do
+        identifiables.register :foo, instance
+        identifiables.all.should == [instance]
+      end
+    end
   end
 end

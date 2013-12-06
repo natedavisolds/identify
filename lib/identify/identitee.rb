@@ -18,6 +18,15 @@ module Identify
       end
     end
 
+    def all_identifiables
+      load_all_identifiables
+      identifiables.all
+    end
+
+    def load_all_identifiables
+      ::Identify::Loader.new(identify_root_directory: identify_root_directory).load_all
+    end
+
     def set_identify_root path_to_template_root
       @identify_root_directory = path_to_template_root
     end

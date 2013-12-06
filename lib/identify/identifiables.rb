@@ -22,6 +22,10 @@ module Identify
       end
     end
 
+    def all
+      instances.values
+    end
+
     private 
 
     attr_reader :instances
