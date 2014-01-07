@@ -1,4 +1,4 @@
-# Identify [![Build Status](https://travis-ci.org/natedavisolds/identify.png?branch=master)](https://travis-ci.org/natedavisolds/identify)
+# Identify [![Build Status](https://travis-ci.org/natedavisolds/identify.png?branch=master)](https://travis-ci.org/natedavisolds/identify) [![Code Climate](https://codeclimate.com/github/natedavisolds/identify.png)](https://codeclimate.com/github/natedavisolds/identify)
 
 Provides methods for constructing and retrieving a domain object. Identify is indended to replace persisting data that is tightly couple to domain logic.
 
