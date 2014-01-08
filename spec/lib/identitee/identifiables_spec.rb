@@ -1,6 +1,6 @@
-require 'identify/identifiables'
+require 'identitee/identifiables'
 
-module Identify
+module Identitee
   describe Identifiables do
     let(:instance) { stub }
     let(:identifiables) { Identifiables.new }
@@ -37,7 +37,7 @@ module Identify
 
       it "raises IdentifiableNotFound if no block or default value" do
         expect { identifiables.find(:foo) }
-          .to raise_error Identify::IdentifiableNotFound
+          .to raise_error Identitee::IdentifiableNotFound
       end
     end
 

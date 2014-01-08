@@ -1,9 +1,9 @@
-require 'identify'
+require 'identitee'
 
-describe Identify do
+describe Identitee do
   it "acts as a constructor" do
     TestIdentifyInitialize = Class.new do
-      include Identify
+      include Identitee
     end
 
     TestIdentifyInitialize.identify(:test).should be_a TestIdentifyInitialize
@@ -11,7 +11,7 @@ describe Identify do
 
   it "registers the identifiable" do
     TestIdentifyRegister = Class.new do
-      include Identify
+      include Identitee
     end
 
     instance = TestIdentifyRegister.identify :test
@@ -21,7 +21,7 @@ describe Identify do
 
   it "passes extra parameters through to new" do
     TestIdentifyMultipleParams = Class.new do
-      include Identify
+      include Identitee
 
       attr_reader :attrib
 
@@ -36,7 +36,7 @@ describe Identify do
 
   it "passes the block to the new as well" do
     TestIdentifyPassingBlock = Class.new do
-      include Identify
+      include Identitee
 
       attr_reader :attrib
 
@@ -57,7 +57,7 @@ describe Identify do
 
     TestAddingFind.should_not respond_to :find
 
-    TestAddingFind.send(:include, Identify)
+    TestAddingFind.send(:include, Identitee)
 
     TestAddingFind.should respond_to :find
   end
@@ -71,7 +71,7 @@ describe Identify do
 
     TestNotReplacingFind.find("something").should == "something"
 
-    TestNotReplacingFind.send(:include, Identify)
+    TestNotReplacingFind.send(:include, Identitee)
 
     TestNotReplacingFind.find("something").should == "something"
     TestNotReplacingFind.find_identifiable("something").should == "Unknown"

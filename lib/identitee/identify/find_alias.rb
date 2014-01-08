@@ -1,5 +1,5 @@
-module Identify
-  module Identitee
+module Identitee 
+  module Identify
     module FindAlias
       def find candidate_id
         find_identifiable candidate_id

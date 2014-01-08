@@ -1,4 +1,4 @@
-module Identify
+module Identitee
   class Loader
     def initialize options={}
       @identify_root_directory = options.delete(:identify_root_directory)

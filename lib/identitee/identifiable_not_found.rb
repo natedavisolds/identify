@@ -1,4 +1,4 @@
-module Identify
+module Identitee
   class IdentifiableNotFound < Exception
   end
 end

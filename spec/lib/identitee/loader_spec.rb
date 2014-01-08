@@ -1,6 +1,6 @@
-require 'identify/loader'
+require 'identitee/loader'
 
-module Identify
+module Identitee
   describe Loader do
     context "when source file does not exist" do
       it "fails gracefully by calling block" do

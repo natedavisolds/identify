@@ -1,6 +1,6 @@
-require 'identify/identifiable_not_found'
+require 'identitee/identifiable_not_found'
 
-module Identify
+module Identitee
   class Identifiables
     def initialize 
       @instances = {}
@@ -17,7 +17,7 @@ module Identify
         elsif default_values.length > 0
           default_values.first
         else
-          raise ::Identify::IdentifiableNotFound
+          raise ::Identitee::IdentifiableNotFound
         end
       end
     end

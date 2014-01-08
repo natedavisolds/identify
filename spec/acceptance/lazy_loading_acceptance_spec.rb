@@ -1,9 +1,9 @@
-require 'identify'
+require 'identitee'
 
 describe "Lazy Loading" do
 
   class LazyLoadingTest
-    include Identify
+    include Identitee
 
     attr_accessor :successful
 
