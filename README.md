@@ -1,17 +1,17 @@
-# Identify [![Build Status](https://travis-ci.org/natedavisolds/identify.png?branch=master)](https://travis-ci.org/natedavisolds/identify) [![Code Climate](https://codeclimate.com/github/natedavisolds/identify.png)](https://codeclimate.com/github/natedavisolds/identify)
+# Identitee [![Build Status](https://travis-ci.org/natedavisolds/identitee.png?branch=master)](https://travis-ci.org/natedavisolds/identify) [![Code Climate](https://codeclimate.com/github/natedavisolds/identify.png)](https://codeclimate.com/github/natedavisolds/identify)
 
-Provides methods for constructing and retrieving a domain object. Identify is indended to replace persisting data that is tightly couple to domain logic.
+Provides methods for constructing and retrieving a domain object. Identify is intended to replace persisting data that is tightly couple to domain logic.
 
 Many times you might see a database structure that will always remain static until the codebase changes.  This is a headache to seed the proper data for the objects to work.  Instead use identify to write these classes in code.
 
-Likewise, many classes may be constructed that do the same thing... just a little bit differently. Like a use case.  Identify allows easy retreival of data.
+Likewise, many classes may be constructed that do the same thing... just a little bit differently. Like a use case.  Identitee allows easy retrieval of data.
 
 ### Finding
 
 Find an identifiable through the `find_identifiable` class method. (See the Basic Example)
 
     class Activity
-      include Identify
+      include Identitee
 
       attr_reader :title
 
@@ -28,14 +28,14 @@ Find an identifiable through the `find_identifiable` class method. (See the Basi
 
 ### Loading identifiables
 
-Identify will try to autoload the identifiables if it doesn't already know about them.  By default it will use the pluralize class_name of the identifiable from the folder that the source file is in.  The load path can explicitly be set with the `set_identify_root` method call.
+Identitee will try to autoload the identifiables if it doesn't already know about them.  By default it will use the pluralize class_name of the identifiable from the folder that the source file is in.  The load path can explicitly be set with the `set_identify_root` method call.
 
     class LazyLoadingTest
-      include Identify
+      include Identitee
 
       attr_accessor :successful
 
-      set_identify_root File.expand_path("../lazy_loading_tests/", __FILE__)
+      set_identitee_root File.expand_path("../lazy_loading_tests/", __FILE__)
 
       def initialize
         @successful = false
@@ -50,7 +50,7 @@ Identify will try to autoload the identifiables if it doesn't already know about
 
 Add this line to your application's Gemfile:
 
-    gem 'identify'
+    gem 'identitee'
 
 And then execute:
 
