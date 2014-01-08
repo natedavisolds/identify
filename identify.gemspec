@@ -10,10 +10,10 @@ Gem::Specification.new do |gem|
   gem.email         = ["nate@davisolds.com"]
   gem.description   = "Identifies and stores instances of a class for later loading"
   gem.summary       = ""
-  gem.homepage      = ""
-
+  gem.homepage      = "https://github.com/natedavisolds/identify"
+  gem.licenses      = ["MIT"]
   gem.files         = `git ls-files`.split($/)
-  gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
+  gem.executables   = []
   gem.test_files    = gem.files.grep(%r{^(spec)/})
   gem.require_paths = ["lib"]
 end
