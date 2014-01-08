@@ -1,11 +1,11 @@
 # -*- encoding: utf-8 -*-
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'identify/version'
+require 'identitee/version'
 
 Gem::Specification.new do |gem|
-  gem.name          = "identify"
-  gem.version       = Identify::VERSION
+  gem.name          = "identitee"
+  gem.version       = Identitee::VERSION
   gem.authors       = ["Nate Davis Olds"]
   gem.email         = ["nate@davisolds.com"]
   gem.description   = "Identifies and stores instances of a class for later loading"
