@@ -1,4 +1,4 @@
-# Identitee [![Build Status](https://travis-ci.org/natedavisolds/identify.png?branch=master)](https://travis-ci.org/natedavisolds/identify) [![Code Climate](https://codeclimate.com/github/natedavisolds/identify.png)](https://codeclimate.com/github/natedavisolds/identify) [![Coverage Status](https://coveralls.io/repos/natedavisolds/identify/badge.png?branch=master)](https://coveralls.io/r/natedavisolds/identify?branch=master)
+# Identitee [![Gem Version](https://badge.fury.io/rb/identitee.png)](http://badge.fury.io/rb/identitee) [![Build Status](https://travis-ci.org/natedavisolds/identify.png?branch=master)](https://travis-ci.org/natedavisolds/identify) [![Code Climate](https://codeclimate.com/github/natedavisolds/identify.png)](https://codeclimate.com/github/natedavisolds/identify) [![Coverage Status](https://coveralls.io/repos/natedavisolds/identify/badge.png?branch=master)](https://coveralls.io/r/natedavisolds/identify?branch=master)
 
 Provides methods for building and retrieving instances of a class. Identify is intended to replace persisting data that is tightly tied to domain logic.
 
