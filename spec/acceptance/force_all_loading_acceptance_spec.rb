@@ -19,6 +19,7 @@ describe "Force all Loading" do
   end
 
   it "loads all the identifiable before calling all" do
-    LazyLoadingTest.all_identifiables.length.should == 1
+    autoload_instance = LazyLoadingTest.all_identifiables.first
+    autoload_instance.should be_successful
   end
 end
