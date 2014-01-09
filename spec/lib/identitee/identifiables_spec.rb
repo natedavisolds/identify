@@ -1,4 +1,4 @@
-require 'identitee/identifiables'
+require 'spec_helper'
 
 module Identitee
   describe Identifiables do

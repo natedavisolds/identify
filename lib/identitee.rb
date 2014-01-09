@@ -5,6 +5,6 @@ require "identitee/identify/find_alias"
 module Identitee
   def self.included base
     base.extend ::Identitee::Identify
-    base.extend ::Identitee::Identify::FindAlias unless method_defined? :find
+    base.extend ::Identitee::Identify::FindAlias unless base.method_defined? :find
   end
 end

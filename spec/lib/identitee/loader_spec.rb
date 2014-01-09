@@ -1,4 +1,4 @@
-require 'identitee/loader'
+require 'spec_helper'
 
 module Identitee
   describe Loader do
@@ -20,11 +20,7 @@ module Identitee
 
         loader.should_receive(:force_load).with('known.rb').once
 
-        identity = loader.lazy_load('known') do
-          "Failing"
-        end
-
-        identity.should_not == "Failing"
+        loader.lazy_load('known')
       end
     end
   end
