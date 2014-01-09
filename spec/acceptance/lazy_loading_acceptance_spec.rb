@@ -1,4 +1,4 @@
-require 'identitee'
+require 'spec_helper'
 
 describe "Lazy Loading" do
 

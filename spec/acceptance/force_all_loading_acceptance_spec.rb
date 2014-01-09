@@ -1,4 +1,4 @@
-require 'identitee'
+require 'spec_helper'
 
 describe "Force all Loading" do
 

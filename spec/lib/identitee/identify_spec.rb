@@ -1,4 +1,4 @@
-require 'identitee'
+require 'spec_helper'
 
 describe Identitee do
   it "acts as a constructor" do

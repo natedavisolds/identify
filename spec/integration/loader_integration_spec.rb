@@ -1,4 +1,4 @@
-require 'identitee/loader'
+require 'spec_helper'
 
 describe "Loader Integration Test" do
   it "loads a file" do
