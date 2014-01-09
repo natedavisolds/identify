@@ -18,10 +18,6 @@ module Identitee
       end
     end
 
-    def alas_find_identifiable
-      alias_method :find_identifiable, :find
-    end
-
     def all_identifiables
       load_all_identifiables
       identifiables.all
