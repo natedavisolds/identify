@@ -1,25 +1,13 @@
 require 'spec_helper'
 
 describe "Force all Loading" do
-
-  class LazyLoadingTest
+  class LoadingAllTest
     include Identitee
-
-    attr_accessor :successful
-
-    set_identify_root File.expand_path("../lazy_loading_tests/", __FILE__)
-
-    def initialize
-      @successful = false
-    end
-
-    def successful?
-      @successful
-    end
+    set_identify_root File.expand_path("../loading_all_tests/", __FILE__)
   end
 
   it "loads all the identifiable before calling all" do
-    autoload_instance = LazyLoadingTest.all_identifiables.first
-    autoload_instance.should be_successful
+    identifiables = LoadingAllTest.all_identifiables
+    identifiables.length.should == 2
   end
 end
