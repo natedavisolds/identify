@@ -1,6 +1,6 @@
 # Identitee [![Build Status](https://travis-ci.org/natedavisolds/identify.png?branch=master)](https://travis-ci.org/natedavisolds/identify) [![Code Climate](https://codeclimate.com/github/natedavisolds/identify.png)](https://codeclimate.com/github/natedavisolds/identify)
 
-Provides methods for constructing and retrieving a domain object. Identify is intended to replace persisting data that is tightly couple to domain logic.
+Provides methods for building and retrieving instances of a class. Identify is intended to replace persisting data that is tightly tied to domain logic.
 
 Many times you might see a database structure that will always remain static until the codebase changes.  This is a headache to seed the proper data for the objects to work.  Instead use identify to write these classes in code.
 
