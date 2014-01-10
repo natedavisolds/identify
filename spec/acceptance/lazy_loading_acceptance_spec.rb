@@ -7,7 +7,7 @@ describe "Lazy Loading" do
 
     attr_accessor :successful
 
-    set_identify_root File.expand_path("../lazy_loading_tests/", __FILE__)
+    set_identitee_root File.expand_path("../lazy_loading_tests/", __FILE__)
 
     def initialize
       @successful = false

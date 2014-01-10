@@ -8,7 +8,7 @@ Likewise, many classes may be constructed that do the same thing... just a littl
 
 ### Finding
 
-Find an identifiable through the `find_identifiable` class method. (See the Basic Example)
+Find an identifiable through the `find_identifiable` (aliased also to find) class method. (See the Basic Example)
 
     class Activity
       include Identitee
@@ -25,10 +25,11 @@ Find an identifiable through the `find_identifiable` class method. (See the Basi
     end
 
     Activity.find_identifiable(:new_activity).title # => "Created something new"
+    Activity.find(:new_activity).title # => "Created something new"
 
 ### Loading identifiables
 
-Identitee will try to autoload the identifiables if it doesn't already know about them.  By default it will use the pluralize class_name of the identifiable from the folder that the source file is in.  The load path can explicitly be set with the `set_identify_root` method call.
+Identitee will try to autoload the identifiables if it doesn't already know about them.  By default it will use the pluralize class_name of the identifiable from the folder that the source file is in.  The load path can explicitly be set with the `set_identitee_root` method call.
 
     class LazyLoadingTest
       include Identitee

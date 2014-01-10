@@ -27,7 +27,7 @@ module Identitee
       ::Identitee::Loader.new(identify_root_directory: identify_root_directory).load_all
     end
 
-    def set_identify_root path_to_template_root
+    def set_identitee_root path_to_template_root
       @identify_root_directory = path_to_template_root
     end
 
