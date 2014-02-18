@@ -18,6 +18,10 @@ module Identitee
       end
     end
 
+    def find_identifiable_key instance
+      identifiables.find_key instance
+    end
+
     def all_identifiables
       load_all_identifiables
       identifiables.all

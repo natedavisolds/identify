@@ -22,6 +22,10 @@ module Identitee
       end
     end
 
+    def find_key instance
+      instances.invert.fetch(instance, nil)
+    end
+
     def all
       instances.values
     end

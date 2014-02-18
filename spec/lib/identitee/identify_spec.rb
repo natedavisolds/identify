@@ -62,7 +62,7 @@ describe Identitee do
     TestAddingFind.should respond_to :find
   end
 
-  it "doesn't symplifies find_identifiable when find exists" do
+  it "doesn't symplify find_identifiable when find exists" do
     TestNotReplacingFind = Class.new do
       def self.find key
         key
@@ -75,5 +75,15 @@ describe Identitee do
 
     TestNotReplacingFind.find("something").should == "something"
     TestNotReplacingFind.find_identifiable("something").should == "Unknown"
+  end
+
+  it "finds the key for an identifiable" do
+    TestFindIdentiteeKey = Class.new do
+      include Identitee
+    end
+
+    instance = TestFindIdentiteeKey.identify :testing_key
+
+    TestFindIdentiteeKey.find_identifiable_key(instance).should eq 'testing_key'
   end
 end

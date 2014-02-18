@@ -47,5 +47,12 @@ module Identitee
         identifiables.all.should == [instance]
       end
     end
+
+    context "when find the key" do
+      it "gives the string identifier for the instance" do
+        identifiables.register :foo, instance
+        identifiables.find_key(instance).should eq 'foo'
+      end
+    end
   end
 end
