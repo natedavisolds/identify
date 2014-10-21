@@ -7,7 +7,7 @@ describe "Lazy Loading" do
 
     attr_accessor :successful
 
-    set_identitee_root File.expand_path("../lazy_loading_tests/", __FILE__)
+    add_identifiable_loader Identitee::Loader.new(identify_root_directory: File.expand_path("../loading_all_tests/", __FILE__)) 
 
     def initialize
       @successful = false
@@ -16,10 +16,6 @@ describe "Lazy Loading" do
     def successful?
       @successful
     end
-  end
-
-  it "has a identify_root_directory" do
-    LazyLoadingTest.identify_root_directory.should =~ /lazy_loading_tests/
   end
 
   it "lazy loads identifyables" do

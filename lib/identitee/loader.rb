@@ -4,11 +4,13 @@ module Identitee
       @identify_root_directory = options.delete(:identify_root_directory)
     end
 
-    def lazy_load filename
-      full_path = [identify_root_directory, "#{filename}.rb"].compact.join('/')
+    def loadable? filename
+      File.exists? full_path(filename)
+    end
 
-      if File.exists? full_path
-        force_load full_path
+    def lazy_load filename
+      if loadable? filename
+        force_load full_path(filename)
       else
         yield if block_given?
       end
@@ -23,6 +25,10 @@ module Identitee
     private
 
     attr_reader :identify_root_directory
+
+    def full_path filename
+      [identify_root_directory, "#{filename}.rb"].compact.join('/')
+    end
 
     def force_full_load
       @fully_loaded = true

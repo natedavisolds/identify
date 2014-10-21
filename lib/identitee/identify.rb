@@ -11,32 +11,20 @@ module Identitee
       instance
     end
 
-    def find_identifiable candidate_id
-      identifiables.find candidate_id.to_s do
-        ::Identitee::Loader.new(identify_root_directory: identify_root_directory).lazy_load(candidate_id.to_s)
-        identifiables.find candidate_id, "Unknown"
-      end
+    def find_identifiable key, default=new, &block
+      identifiables.find key, default, &block
     end
 
     def find_identifiable_key instance
       identifiables.find_key instance
     end
 
-    def all_identifiables
-      load_all_identifiables
+    def find_all_identifiables
       identifiables.all
     end
 
-    def load_all_identifiables
-      ::Identitee::Loader.new(identify_root_directory: identify_root_directory).load_all
-    end
-
-    def set_identitee_root path_to_template_root
-      @identify_root_directory = path_to_template_root
-    end
-
-    def identify_root_directory
-      @identify_root_directory
+    def add_identifiable_loader loader
+      identifiables.add_loader loader
     end
 
     def identifiables

@@ -15,12 +15,8 @@ describe "Default the directory to the caller classes directory and the pluraliz
     end
   end
 
-  it "has a identify_root_directory" do
-    DefaultDirectorySetTest.identify_root_directory.should =~ /default_directory_set_tests/
-  end
-
   it "lazy loads identifyables" do
-    test = DefaultDirectorySetTest.find_identifiable :default_directory_test
+    test = DefaultDirectorySetTest.find_identifiable :default_directory_test, nil
     test.should_not be_nil
     test.should be_successful
   end

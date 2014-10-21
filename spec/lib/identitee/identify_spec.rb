@@ -74,7 +74,7 @@ describe Identitee do
     TestNotReplacingFind.send(:include, Identitee)
 
     TestNotReplacingFind.find("something").should == "something"
-    TestNotReplacingFind.find_identifiable("something").should == "Unknown"
+    TestNotReplacingFind.find_identifiable("something", "Unknown").should == "Unknown"
   end
 
   it "finds the key for an identifiable" do

@@ -8,6 +8,7 @@ module Identitee
     base.extend ::Identitee::Identify
     base.extend ::Identitee::Identify::FindAlias unless base.method_defined? :find
 
-    base.set_identitee_root Identitee::DefaultPathBuilder.to_path caller, base
+    identify_root_directory = Identitee::DefaultPathBuilder.to_path caller, base
+    base.add_identifiable_loader ::Identitee::Loader.new(identify_root_directory: identify_root_directory) 
   end
 end
