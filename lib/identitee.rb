@@ -1,6 +1,7 @@
 require "identitee/version"
 require "identitee/identify"
 require "identitee/default_path_builder"
+require "identitee/identify_key"
 require "identitee/identify/find_alias"
 
 module Identitee

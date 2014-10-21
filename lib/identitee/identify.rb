@@ -3,11 +3,11 @@ require "identitee/loader"
 
 module Identitee
   module Identify
-    def identify id, *extra_parameters, &block
+    def identify key, *extra_parameters, &block
       instance = new *extra_parameters
       instance.instance_eval &block if block_given?
 
-      identifiables.register id, instance
+      identifiables.register key, instance
       instance
     end
 
