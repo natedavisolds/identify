@@ -20,7 +20,7 @@ describe "Lazy Loading" do
 
   it "lazy loads identifyables" do
     test = LazyLoadingTest.find_identifiable :autoload_test
-    test.should_not be_nil
-    test.should be_successful
+    expect(test).to_not be_nil
+    expect(test).to be_successful
   end
 end

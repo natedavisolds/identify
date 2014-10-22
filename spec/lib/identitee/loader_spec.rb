@@ -4,11 +4,11 @@ module Identitee
   describe Loader do
     context "when source file does not exist" do
       it "fails gracefully by calling block" do
-        loader = Loader.new
-
-        loader.lazy_load('unknown') do
+        result = Loader.new.lazy_load('unknown') do
           "Passing"
-        end.should == "Passing"
+        end
+
+        expect(result).to eq "Passing"
       end
     end
 
@@ -16,9 +16,9 @@ module Identitee
       it "loads the file" do
         loader = Loader.new
 
-        File.stub!(:exists?).with('known.rb').and_return(true)
+        expect(File).to receive(:exists?).with('known.rb').and_return(true)
 
-        loader.should_receive(:force_load).with('known.rb').once
+        expect(loader).to receive(:force_load).with('known.rb').once
 
         loader.lazy_load('known')
       end

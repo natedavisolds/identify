@@ -7,7 +7,7 @@ describe "Can find identifiables using the short hand find" do
 
   it "uses the find alias" do
     test_case = AliasFindingTestCase.identify :test
-    AliasFindingTestCase.find(:test).should eq test_case
+    expect(AliasFindingTestCase.find(:test)).to eq test_case
   end
 
   class OtherFindTestCase
@@ -20,6 +20,6 @@ describe "Can find identifiables using the short hand find" do
   
   it "uses the existing find method" do
     test_case = OtherFindTestCase.identify :test
-    OtherFindTestCase.find(:test).should == "other find test"
+    expect(OtherFindTestCase.find(:test)).to eq "other find test"
   end
 end

@@ -8,6 +8,6 @@ describe "Force all Loading" do
 
   it "loads all the identifiable before calling all" do
     identifiables = LoadingAllTest.find_all_identifiables
-    identifiables.length.should == 2
+    expect(identifiables.length).to eq 2
   end
 end

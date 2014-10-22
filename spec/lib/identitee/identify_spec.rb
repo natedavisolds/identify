@@ -6,7 +6,7 @@ describe Identitee do
       include Identitee
     end
 
-    TestIdentifyInitialize.identify(:test).should be_a TestIdentifyInitialize
+    expect(TestIdentifyInitialize.identify(:test)).to be_a TestIdentifyInitialize
   end
 
   it "registers the identifiable" do
@@ -16,7 +16,7 @@ describe Identitee do
 
     instance = TestIdentifyRegister.identify :test
 
-    TestIdentifyRegister.find_identifiable(:test).should == instance
+    expect(TestIdentifyRegister.find_identifiable(:test)).to eq instance
   end
 
   it "passes extra parameters through to new" do
@@ -31,7 +31,7 @@ describe Identitee do
     end
 
     instance = TestIdentifyMultipleParams.identify :test, "Testing"
-    instance.attrib.should == "Testing"
+    expect(instance.attrib).to eq "Testing"
   end
 
   it "passes the block to the new as well" do
@@ -49,17 +49,17 @@ describe Identitee do
       set_attrib "It ran the block!"
     end
 
-    instance.attrib.should == "It ran the block!"
+    expect(instance.attrib).to eq "It ran the block!"
   end
 
   it "simplifies find_identifiable to find" do
     TestAddingFind = Class.new
 
-    TestAddingFind.should_not respond_to :find
+    expect(TestAddingFind).to_not respond_to :find
 
     TestAddingFind.send(:include, Identitee)
 
-    TestAddingFind.should respond_to :find
+    expect(TestAddingFind).to respond_to :find
   end
 
   it "doesn't symplify find_identifiable when find exists" do
@@ -69,12 +69,12 @@ describe Identitee do
       end
     end
 
-    TestNotReplacingFind.find("something").should == "something"
+    expect(TestNotReplacingFind.find("something")).to eq "something"
 
     TestNotReplacingFind.send(:include, Identitee)
 
-    TestNotReplacingFind.find("something").should == "something"
-    TestNotReplacingFind.find_identifiable("something", "Unknown").should == "Unknown"
+    expect(TestNotReplacingFind.find("something")).to eq "something"
+    expect(TestNotReplacingFind.find_identifiable("something", "Unknown")).to eq "Unknown"
   end
 
   it "finds the key for an identifiable" do
@@ -84,6 +84,6 @@ describe Identitee do
 
     instance = TestFindIdentiteeKey.identify :testing_key
 
-    TestFindIdentiteeKey.find_identifiable_key(instance).should eq 'testing_key'
+    expect(TestFindIdentiteeKey.find_identifiable_key(instance)).to eq 'testing_key'
   end
 end

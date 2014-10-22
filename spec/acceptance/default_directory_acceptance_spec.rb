@@ -17,7 +17,7 @@ describe "Default the directory to the caller classes directory and the pluraliz
 
   it "lazy loads identifyables" do
     test = DefaultDirectorySetTest.find_identifiable :default_directory_test, nil
-    test.should_not be_nil
-    test.should be_successful
+    expect(test).to_not be_nil
+    expect(test).to be_successful
   end
 end
