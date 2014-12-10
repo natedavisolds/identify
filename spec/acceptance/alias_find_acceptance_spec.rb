@@ -22,4 +22,17 @@ describe "Can find identifiables using the short hand find" do
     test_case = OtherFindTestCase.identify :test
     expect(OtherFindTestCase.find(:test)).to eq "other find test"
   end
+
+  it "will pass a default value" do
+    oftc = AliasFindingTestCase.find(:test_default, "default")
+    expect(oftc).to eq "default"
+  end
+
+  it "will pass a block value" do
+    oftc = AliasFindingTestCase.find(:test_default) do
+      "default"
+    end
+
+    expect(oftc).to eq "default"
+  end
 end
